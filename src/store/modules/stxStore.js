@@ -11,7 +11,7 @@ const actions = {
   fetchgnbData({
     commit
   }) {
-    axios.get('/data/gnb.json')
+    axios.get('./data/gnb.json')
       .then(response => {
         commit('UPDATE_GNB', response.data)
       })
@@ -19,14 +19,14 @@ const actions = {
   },
   fetchNewsData({commit}) {
     // news.josn axois로 호출
-    axios.get('/data/news.json')
+    axios.get('./data/news.json')
       .then(response => {
         commit('UPDATE_NEWS',response.data)
       })
       .catch(err => console.log(err))
   },
   fetchNoticeData({commit}) {
-    axios.get('/data/notice.json')
+    axios.get('./data/notice.json')
     .then(response => {
       commit('UPDATE_NOTICE',response.data)
     })
@@ -43,7 +43,7 @@ const mutations = {
     state.newsData = payload
   },
   UPDATE_NOTICE(state,payload){
-    state.newsData = payload
+    state.noticeData = payload
   }
 
 };
